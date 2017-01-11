@@ -43,6 +43,7 @@ HEADERS +=  \
         io/qtldurl_p.h \
         io/qsettings.h \
         io/qsettings_p.h \
+        io/qfsfileengine.h \
         io/qfsfileengine_p.h \
         io/qfsfileengine_iterator_p.h \
         io/qfilesystemwatcher.h \

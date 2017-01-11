@@ -65,6 +65,8 @@ QT_BEGIN_NAMESPACE
 #define Q_USE_DEPRECATED_MAP_API 1
 #endif
 
+#ifndef QT_JAMBI_BUILD
+
 class QFSFileEnginePrivate;
 
 class Q_CORE_EXPORT QFSFileEngine : public QAbstractFileEngine
@@ -130,6 +132,10 @@ public:
 protected:
     QFSFileEngine(QFSFileEnginePrivate &dd);
 };
+
+#else
+#include "QtCore/qfsfileengine.h"
+#endif // QT_JAMBI_BUILD
 
 class Q_AUTOTEST_EXPORT QFSFileEnginePrivate : public QAbstractFileEnginePrivate
 {

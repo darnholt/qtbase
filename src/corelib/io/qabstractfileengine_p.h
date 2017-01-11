@@ -250,7 +250,7 @@ private:
 };
 
 #else
-#include "QtCore/qabstractfileengine.h"
+#include <QtCore/qabstractfileengine.h>
 #endif // QT_JAMBI_BUILD
 
 class QAbstractFileEnginePrivate
