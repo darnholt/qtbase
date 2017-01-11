@@ -180,9 +180,11 @@ protected:
     void setRawHeader(const QByteArray &headerName, const QByteArray &value);
     void setAttribute(QNetworkRequest::Attribute code, const QVariant &value);
 
+#if !defined(QT_JAMBI_BUILD) || !defined(QT_NO_SSL)
     virtual void sslConfigurationImplementation(QSslConfiguration &) const;
     virtual void setSslConfigurationImplementation(const QSslConfiguration &);
     virtual void ignoreSslErrorsImplementation(const QList<QSslError> &);
+#endif // QT_JAMBI_BUILD
 
 private:
     Q_DECLARE_PRIVATE(QNetworkReply)

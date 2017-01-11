@@ -424,6 +424,7 @@ private:
     ret (QOPENGLF_APIENTRYP name)args;
 #define QT_OPENGL_COUNT_FUNCTIONS(ret, name, args) +1
 
+#ifndef QT_JAMBI_GENERATOR
 #define QT_OPENGL_DECLARE(FUNCTIONS) \
 public: \
     struct Functions { \
@@ -435,6 +436,9 @@ public: \
     }; \
 private: \
     void init(QOpenGLContext *context);
+#else
+#define QT_OPENGL_DECLARE(FUNCTIONS)
+#endif
 
 class QOpenGLExtraFunctionsPrivate : public QOpenGLFunctionsPrivate
 {

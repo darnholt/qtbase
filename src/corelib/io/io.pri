@@ -1,6 +1,7 @@
 # Qt core io module
 
 HEADERS +=  \
+        io/qabstractfileengine.h \
         io/qabstractfileengine_p.h \
         io/qbuffer.h \
         io/qdatastream.h \

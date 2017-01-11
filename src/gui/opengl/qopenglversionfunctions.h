@@ -117,6 +117,7 @@ Q_DECL_CONSTEXPR inline bool operator!=(const QOpenGLVersionStatus &lhs, const Q
     ret (QOPENGLF_APIENTRYP name)args;
 #define QT_OPENGL_COUNT_FUNCTIONS(ret, name, args) +1
 
+#ifndef QT_JAMBI_GENERATOR
 #define QT_OPENGL_DECLARE(FUNCTIONS) \
 public: \
     struct Functions { \
@@ -128,6 +129,9 @@ public: \
     }; \
 private: \
     void init()
+#else
+#define QT_OPENGL_DECLARE(FUNCTIONS)
+#endif
 
 class QOpenGLVersionFunctionsBackend
 {

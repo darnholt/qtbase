@@ -64,6 +64,8 @@ class QVariant;
 class QAbstractFileEngineIterator;
 class QAbstractFileEnginePrivate;
 
+#ifndef QT_JAMBI_BUILD
+
 class Q_CORE_EXPORT QAbstractFileEngine
 {
 public:
@@ -246,6 +248,10 @@ private:
     void setPath(const QString &path);
     QScopedPointer<QAbstractFileEngineIteratorPrivate> d;
 };
+
+#else
+#include "QtCore/qabstractfileengine.h"
+#endif // QT_JAMBI_BUILD
 
 class QAbstractFileEnginePrivate
 {

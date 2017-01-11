@@ -357,7 +357,9 @@ protected:
     QList<QTreeWidgetItem*> items(const QMimeData *data) const;
 
     QModelIndex indexFromItem(const QTreeWidgetItem *item, int column = 0) const;
+#ifndef QT_JAMBI_GENERATOR
     QModelIndex indexFromItem(QTreeWidgetItem *item, int column = 0) const; // ### Qt 6: remove
+#endif
     QTreeWidgetItem *itemFromIndex(const QModelIndex &index) const;
     void dropEvent(QDropEvent *event) Q_DECL_OVERRIDE;
 

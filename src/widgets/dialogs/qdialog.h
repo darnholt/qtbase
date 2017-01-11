@@ -87,7 +87,9 @@ Q_SIGNALS:
     void rejected();
 
 public Q_SLOTS:
+#ifndef QT_JAMBI_GENERATOR
     virtual void open();
+#endif
     virtual int exec();
     virtual void done(int);
     virtual void accept();

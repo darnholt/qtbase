@@ -726,6 +726,7 @@ void QNetworkReply::ignoreSslErrors(const QList<QSslError> &errors)
 }
 #endif
 
+#if !defined(QT_JAMBI_BUILD) || !defined(QT_NO_SSL)
 /*!
   \fn void QNetworkReply::sslConfigurationImplementation(QSslConfiguration &configuration) const
   \since 5.0
@@ -767,6 +768,7 @@ void QNetworkReply::setSslConfigurationImplementation(const QSslConfiguration &)
 void QNetworkReply::ignoreSslErrorsImplementation(const QList<QSslError> &)
 {
 }
+#endif // QT_JAMBI_BUILD
 
 /*!
     If this function is called, SSL errors related to network
